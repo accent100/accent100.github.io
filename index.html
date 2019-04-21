@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Title</title>
+</head>
+
+<body>
+
+    <section class="wrapper">
+        <div class="wrapper--title">
+            <div class="title">AccEnt</div>
+        </div>
+
+        <div class="content">
+            <div class="progressBar__wrapper progressBar__wrapper--true opacityNull"> <div class="progressBar--true"></div> </div>
+
+            <div class="content__buttons _column">
+                <div class="gameOver hide">
+                    <h2 class="gameOver__title">Вы победили!</h2>
+                    <p class="gameOver__text">Количество правильных ответов: <span class="gameOver__countCorrect"></span></p>
+                    <p class="gameOver__text">Количество ошибок: <span class="gameOver__countError"></span></p>
+                </div>
+
+                <button class="button button--true hide">Правильно</button>
+                <button class="button button--begin">Начать</button>
+                <div class="button__normalize hide"></div>
+                <button class="button button--false hide">Неправильно</button>
+            </div>
+
+            <div class="progressBar__wrapper progressBar__wrapper--false opacityNull"> <div class="progressBar--false"></div> </div>
+        </div>
+    </section>
+
+    <script src="accent.js"></script>
+</body>
+</html>
