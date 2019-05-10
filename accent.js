@@ -124,7 +124,6 @@ function endGame() {
 // _writeConsole();
 
 // ------------------------- Работа с кнопками -------------------------
-
 buttonBegin.addEventListener('click', function() {
     gameOver.classList.add('hide');
     init();
@@ -139,71 +138,26 @@ buttonBegin.addEventListener('click', function() {
     initButtons(false);
 });
 
-    buttonTrue.addEventListener('click', function() {
-        //TODO: поменять background-color кнопкам (сообщение пользователю).
-        // progress bar true - увеличить значение на 1.
-        // Текущее слово должно попасть в конец массива.
-        // Уменьшить lengthWords на 1.
-        // Проверка на end game
-        // Расчитать новую пару слов.
-        // Поставить новую пару слов в кнопки.
-        progressBarTrue.style.width = ++countTrue + '%';
-        // console.log('countTrue = ' + countTrue);
+buttonTrue.addEventListener('click', function() {
+    //TODO: поменять background-color кнопкам (сообщение пользователю).
+    // progress bar true - увеличить значение на 1.
+    // Текущее слово должно попасть в конец массива.
+    // Уменьшить lengthWords на 1.
+    // Проверка на end game
+    // Расчитать новую пару слов.
+    // Поставить новую пару слов в кнопки.
+    progressBarTrue.style.width = ++countTrue + '%';
+    // console.log('countTrue = ' + countTrue);
 
-        if (lengthWords !== 0) {
-            console.log('lengthWords = ' + lengthWords);
-            buttonFalse.classList.add('opacityNull');
-            buttonTrue.classList.add('opacityNull');
-
-            //TODO: покрасить бордеры в colorTrue
-            progressBarWrapperTrue.style.borderColor = colorTrue;
-            content.style.borderColor = colorTrue;
-            progressBarTrue.style.backgroundColor = colorTrue;
-
-            setTimeout(function() {
-                buttonFalse.classList.add('hide');
-                buttonTrue.classList.add('hide');
-
-                buttonNormalize.classList.remove('hide');
-                setTimeout(function() {
-                    initButtons(true);
-                    buttonNormalize.classList.add('hide');
-
-                    buttonFalse.classList.remove('hide');
-                    buttonTrue.classList.remove('hide');
-                    setTimeout(function() {
-                        buttonTrue.classList.remove('opacityNull');
-                        buttonFalse.classList.remove('opacityNull');
-
-                        progressBarWrapperTrue.style.borderColor = colorDefault;
-                        content.style.borderColor = colorDefault;
-                        progressBarTrue.style.backgroundColor = colorDefault;
-                    }, 500)
-                }, 500)
-            }, 500);
-        } else {
-            endGame();
-        }
-
-        // _writeConsole();
-    });
-
-    buttonFalse.addEventListener('click', function() {
-        //TODO: поменять background-color кнопкам (сообщение пользователю).
-        // progress bar false - увеличить значение на 1.
-        // Расчитать новую пару слов.
-        // Поставить новую пару слов в кнопки.
-
-        // console.log('click false ' + ++countFalse);
-
-        progressBarFalse.style.width = ++countFalse + '%';
-
+    if (lengthWords !== 0) {
+        console.log('lengthWords = ' + lengthWords);
         buttonFalse.classList.add('opacityNull');
         buttonTrue.classList.add('opacityNull');
 
-        progressBarWrapperFalse.style.borderColor = colorFalse;
-        content.style.borderColor = colorFalse;
-        progressBarFalse.style.backgroundColor = colorFalse;
+        //TODO: покрасить бордеры в colorTrue
+        progressBarWrapperTrue.style.borderColor = colorTrue;
+        content.style.borderColor = colorTrue;
+        progressBarTrue.style.backgroundColor = colorTrue;
 
         setTimeout(function() {
             buttonFalse.classList.add('hide');
@@ -211,7 +165,7 @@ buttonBegin.addEventListener('click', function() {
 
             buttonNormalize.classList.remove('hide');
             setTimeout(function() {
-                initButtons(false);
+                initButtons(true);
                 buttonNormalize.classList.add('hide');
 
                 buttonFalse.classList.remove('hide');
@@ -220,15 +174,60 @@ buttonBegin.addEventListener('click', function() {
                     buttonTrue.classList.remove('opacityNull');
                     buttonFalse.classList.remove('opacityNull');
 
-                    progressBarWrapperFalse.style.borderColor = colorDefault;
+                    progressBarWrapperTrue.style.borderColor = colorDefault;
                     content.style.borderColor = colorDefault;
-                    progressBarFalse.style.backgroundColor = colorDefault;
+                    progressBarTrue.style.backgroundColor = colorDefault;
                 }, 500)
             }, 500)
         }, 500);
+    } else {
+        endGame();
+    }
 
-        // _writeConsole();
-    });
+    // _writeConsole();
+});
+
+buttonFalse.addEventListener('click', function() {
+    //TODO: поменять background-color кнопкам (сообщение пользователю).
+    // progress bar false - увеличить значение на 1.
+    // Расчитать новую пару слов.
+    // Поставить новую пару слов в кнопки.
+
+    // console.log('click false ' + ++countFalse);
+
+    progressBarFalse.style.width = ++countFalse + '%';
+
+    buttonFalse.classList.add('opacityNull');
+    buttonTrue.classList.add('opacityNull');
+
+    progressBarWrapperFalse.style.borderColor = colorFalse;
+    content.style.borderColor = colorFalse;
+    progressBarFalse.style.backgroundColor = colorFalse;
+
+    setTimeout(function() {
+        buttonFalse.classList.add('hide');
+        buttonTrue.classList.add('hide');
+
+        buttonNormalize.classList.remove('hide');
+        setTimeout(function() {
+            initButtons(false);
+            buttonNormalize.classList.add('hide');
+
+            buttonFalse.classList.remove('hide');
+            buttonTrue.classList.remove('hide');
+            setTimeout(function() {
+                buttonTrue.classList.remove('opacityNull');
+                buttonFalse.classList.remove('opacityNull');
+
+                progressBarWrapperFalse.style.borderColor = colorDefault;
+                content.style.borderColor = colorDefault;
+                progressBarFalse.style.backgroundColor = colorDefault;
+            }, 500)
+        }, 500)
+    }, 500);
+
+    // _writeConsole();
+});
 
 //****************************************************************************
 
