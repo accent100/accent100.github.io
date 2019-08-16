@@ -80,7 +80,7 @@ body {
                 transition: background-color 500ms linear;
             }
 
-    .wrapper--title {
+    .wrapper__title {
         border: 8px solid #68aee5;
         margin-top: 25px;
         margin-bottom: 25px;
