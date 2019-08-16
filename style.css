@@ -1,5 +1,5 @@
 * {
-    font-family: Arial;
+    font-family: Arial, sans-serif;
 }
 
 html {
@@ -7,8 +7,8 @@ html {
 }
 
 body {
-    /*background-color: red;*/
-    background: url(img/176.jpg) repeat #009fff;
+    /*background-color: #ffffff;*/
+    /*background: url(img/176.jpg) repeat #009fff;*/
 }
 
 .opacityNull {
@@ -67,7 +67,7 @@ body {
             .progressBar--true {
                 /*padding: 5px;*/
                 background-color: #2d9ae5;
-                width: 0%;
+                width: 0;
                 height: 100%;
                 transition: background-color 500ms linear;
             }
@@ -75,7 +75,7 @@ body {
             .progressBar--false {
                 /*padding: 5px;*/
                 background-color: #2d9ae5;
-                width: 0%;
+                width: 0;
                 height: 100%;
                 transition: background-color 500ms linear;
             }
